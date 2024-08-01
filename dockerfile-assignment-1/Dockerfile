@@ -16,6 +16,7 @@ COPY package.json package.json
 
 RUN npm install && npm cache clean --force
 
+# Copy all the files in the host, to the current directory in the image
 COPY . .
 
 CMD ["tini", "--", "node", "./bin/www"]
